@@ -1,25 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title', 'Sample_2018') - Laravel Study_Test</title>
+       <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <header class="navbar navbar-fixed-top navbar-inverse">
-            <div class="container">
-                <div class="col-md-offset-1 col-md-10">
-                    <a href="/" id="logo">Sample_2018</a>
-                    <nav>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/help">帮助</a></li>
-                            <li><a href="#">登录</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div class="container">
+        @include('layouts._header')
+        <div class="container-fluid">
             @yield('content')
         </div>
+        @include('layouts._footer')
     </body>
 </html>
