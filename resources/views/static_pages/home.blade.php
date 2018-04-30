@@ -3,7 +3,7 @@
 @section('title', 'Home')
 @section('content')
     <div class="jumbotron">
-        <h1>Hello Handsame Guy</h1>
+        <h1>Hello Handsome Guy</h1>
         <p class="lead">
             你现在所看到的是 <a href="https://laravel-china.org/courses/laravel-essential-training-5.1">Laravel PHP Sample_2018示例项目主页。</a>
         </p>
