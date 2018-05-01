@@ -10,11 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// 基础页面
 Route::get('/', 'StaticPagesController@home') -> name('home');
 Route::get('/help', 'StaticPagesController@help') -> name('help');
 Route::get('/about', 'StaticPagesController@about') -> name('about');
 
-/* 登录页 */
-Route::get('/login', 'StaticPagesController@login') -> name('login');
+/* 用户操作页面 */
+Route::get('/login', 'UsersController@login') -> name('login');
+Route::get('/create', 'UsersController@create') -> name('create');
 

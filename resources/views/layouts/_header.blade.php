@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    <!--    此处id与面包屑<button>中的id对应  -->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{route('login')}}">登录</a></li>
-                    <li><a href="#">注册</a></li>
+                    <li><a href="{{route('create')}}">注册</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他<span class="caret"></span></a>
                         <ul class="dropdown-menu">

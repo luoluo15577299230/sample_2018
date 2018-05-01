@@ -11,7 +11,7 @@
             Let's Begining!
         </p>
         <p>
-            <a class="btn btn-lg btn-success" href="#" role="button">Login now</a>
+            <a class="btn btn-lg btn-success" href="{{route('login')}}" role="button">Login now</a>
         </p>
     </div>
 

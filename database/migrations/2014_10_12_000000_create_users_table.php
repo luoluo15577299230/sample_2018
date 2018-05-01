@@ -11,15 +11,15 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up()        //创建Users表
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+        Schema::create('users', function (Blueprint $table) {   //字段名称      字段类型
+            $table->increments('id');                           // id           integer(自增id)
+            $table->string('name');                             // name         string
+            $table->string('email')->unique();                  // email        string
+            $table->string('password',60);                      // password     string
+            $table->rememberToken();                            // remenber_token   string(保存“记住我”的相关信息)
+            $table->timestamps();                               // created_at / updated_at     datetime (保存用户创建时间 和 更新时间)
         });
     }
 
@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down()      //删除Users表
     {
         Schema::dropIfExists('users');
     }
