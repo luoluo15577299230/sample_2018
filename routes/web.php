@@ -19,3 +19,6 @@ Route::get('/about', 'StaticPagesController@about') -> name('about');
 Route::get('/login', 'UsersController@login') -> name('login');
 Route::get('/create', 'UsersController@create') -> name('create');
 
+
+/* resource方法 定义用户资源路由 */
+Route::resource('users', 'UsersController');
