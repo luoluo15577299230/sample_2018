@@ -15,10 +15,12 @@ Route::get('/', 'StaticPagesController@home') -> name('home');
 Route::get('/help', 'StaticPagesController@help') -> name('help');
 Route::get('/about', 'StaticPagesController@about') -> name('about');
 
-/* 用户操作页面 */
-Route::get('/login', 'UsersController@login') -> name('login');
-Route::get('/create', 'UsersController@create') -> name('create');
-
-
+/* 用户注册页面 */
+Route::get('/signup', 'UsersController@create') -> name('signup');
 /* resource方法 定义用户资源路由 */
 Route::resource('users', 'UsersController');
+
+/*用户登录 登出页面*/
+Route::get('/login', 'SessionsController@create') -> name('login');     //显示登录页面
+Route::post('/login', 'SessionsController@store') -> name('login');     //创建新会话（登录操作）
+Route::delete('/logout', 'SessionsController@destroy') -> name('logout');   //销毁会话（退出登录）

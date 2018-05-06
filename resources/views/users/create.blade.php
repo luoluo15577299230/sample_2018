@@ -28,20 +28,20 @@
                     <div class="form-group">
                         <label for="inputPassword" class="col-sm-4 control-label">Password</label>
                         <div class="col-sm-5">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" value="{{ old('password') }}">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" value="">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="Password_confirmation" class="col-sm-4 control-label">Re_Password</label>
                         <div class="col-sm-5">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password_confirmation" value="{{ old('password_confirmation') }}">
+                            <input type="password" class="form-control" id="password_confirmation" placeholder="Password" name="password_confirmation" value="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-5">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" value=""> I had Readed the Agreement
+                                    <input type="checkbox" name="Readed_Web_Agreement"> I had Readed the Agreement
                                 </label>
                             </div>
                         </div>
