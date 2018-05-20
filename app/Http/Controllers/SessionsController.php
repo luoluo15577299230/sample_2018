@@ -8,10 +8,20 @@ use Auth;
 
 class SessionsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest',[
+            'only' => ['create']
+        ]);
+    }
+
     public function create()
     {
         return view('sessions.create');
-    }
+    }       //账号注册页面
+
+
 
     public function store(Request $request)
     {
@@ -22,16 +32,17 @@ class SessionsController extends Controller
 
        if (Auth::attempt($credentials, $request->has('remember'))) {
            session()->flash('success', '欢迎回来！');
-           return redirect()->route('users.show', [Auth::user()]);
+           return redirect()->intended(route('users.show', [Auth::user()]));
        } else {
            session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
            return redirect()->back();
        }
-    }
+    }       //登录账户的验证逻辑
+
     public function destroy()
     {
         Auth::logout();
         session() -> flash('success', '您已成功退出！');
         return redirect('login');
-    }
+    }       //退出账户的逻辑
 }

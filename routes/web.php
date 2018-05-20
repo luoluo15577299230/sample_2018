@@ -19,6 +19,7 @@ Route::get('/about', 'StaticPagesController@about') -> name('about');
 Route::get('/signup', 'UsersController@create') -> name('signup');
 /* resource方法 定义用户资源路由 */
 Route::resource('users', 'UsersController');
+//Route::get('/users/{user}/edit', 'UsersController@edit') -> name('users.edit'); //用户个人信息编辑  已经包含在 resource 路由方法内
 
 /*用户登录 登出页面*/
 Route::get('/login', 'SessionsController@create') -> name('login');     //显示登录页面
