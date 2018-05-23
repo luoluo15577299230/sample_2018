@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="Password" class="col-sm-4 control-label">Password</label>
+                        <label for="Password" class="col-sm-4 control-label">Password（<a href="{{route('password.request')}}">ForgotPassword</a>）</label>
                         <div class="col-sm-5">
                             <input type="password" class="form-control" id="Password" placeholder="Password" name="password" value="{{ old('password') }}">
                         </div>
