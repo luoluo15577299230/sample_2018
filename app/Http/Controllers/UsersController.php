@@ -36,8 +36,12 @@
 
         public function show(User $user)
         {
-            return view('users.show', compact('user'));
-        }   //用户个人信息显示页面
+            $statuses = $user->statuses()
+                                ->orderBy('created_at', 'desc')
+                                ->paginate(30);         //抓取用户数据 $user 和微博动态数据 $statuses ，并传递到个人信息页面
+
+            return view('users.show', compact('user', 'statuses'));
+        }   //用户个人信息显示页面(包含括号内的用户信息和微博信息)
 
         public function store(Request $request)     //用户注册信息验证
         {
@@ -131,6 +135,20 @@
             Auth::login($user);
             session()->flash('success', '恭喜您，激活成功！');
             return redirect()->route('users.show', [$user]);
+        }
+
+        public function followings(User $user)
+        {
+            $users = $user->followings()->paginate(30);
+            $title = '关注的人';
+            return view('users.show_follow', compact('users', 'title'));
+        }
+
+        public function followers(User $user)
+        {
+            $users = $user->followers()->paginate(30);
+            $title = '粉丝';
+            return view('users.show_follow', compact('users', 'title'));
         }
 
     }

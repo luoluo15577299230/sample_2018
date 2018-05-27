@@ -36,3 +36,11 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');         //密码更新页面
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');           //执行密码更新操作
+
+
+Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);        //定义微博资源路由，并只需要 创建和删除 路由
+
+Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');     // 显示 我已关注的用户列表
+Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');        //显示 粉丝列表
+Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');       //关注用户 操作
+Route::get('/users/folloers/{user}', 'FollowersController@destroy')->name('followers.destroy');     //取消 关注用户 操作
