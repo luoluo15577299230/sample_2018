@@ -43,4 +43,4 @@ Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy'
 Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');     // 显示 我已关注的用户列表
 Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');        //显示 粉丝列表
 Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');       //关注用户 操作
-Route::get('/users/folloers/{user}', 'FollowersController@destroy')->name('followers.destroy');     //取消 关注用户 操作
+Route::delete('/users/folloers/{user}', 'FollowersController@destroy')->name('followers.destroy');     //取消 关注用户 操作

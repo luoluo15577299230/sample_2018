@@ -1,6 +1,5 @@
 @extends('layouts.default')
 
-@section('title', '{{ $user->name }}-Home')
 @section('content')
     @if (Auth::check())
         <div class="row">
